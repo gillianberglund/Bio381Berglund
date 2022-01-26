@@ -1,5 +1,5 @@
 ---
-title: "index.rmd"
+title: "Homework_02.rmd"
 output: html_document
 ---
 
@@ -7,5 +7,5 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-[Homework 2](Homework_02.html)
+
 
