@@ -1,0 +1,10 @@
+---
+title: "Homework_03"
+output: html_document
+---
+
+1. This is first question text
+```
+FIND:
+REPLACE:
+```

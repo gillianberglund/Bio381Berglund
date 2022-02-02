@@ -9,7 +9,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Bio 381 Course Portfolio
 
-### Homeworks
+### Homework 2:
 [Homework 2](Homework_02.html)
 
+### Homework 3:
+[Homework 3](Homework_03.html)
 
