@@ -1,6 +1,8 @@
 ---
 title: "index.rmd"
-output: html_document
+output: 
+  html_document: 
+    theme: cosmo
 ---
 
 ```{r setup, include=FALSE}
