@@ -1,0 +1,89 @@
+---
+title: "Homework_04"
+author: "Gillian Berglund"
+date: "2/9/2022"
+output: 
+  html_document: 
+    theme: cosmo
+---
+
+### Problem 1 
+
+
+``` {r}
+x <- 1.1
+a <- 2.2
+b <- 3.3
+
+z <- x^a^b
+print(z)
+
+z <- (x^a)^b
+print(z)
+
+z <- 3*x^3 + 2*x^2 + 1
+print(z)
+```
+
+### Problem 2 
+
+```{r}
+a <- c(seq(from = 1, to = 8),seq(from = 7, to = 1))
+
+b <- rep(1:5, c(1,2,3,4,5))
+
+c <- rep(5:1, c(1,2,3,4,5))
+  
+```
+
+### Problem 3
+Create a vector of two random uniform number. In a spatial map, these can be interpreted as x and y coordinates that give the location of an individual (such as a marked forest tree in a plot that has been mapped). Using one of R’s inverse trigonometry functions (asin(), acos(), or atan()), convert these numbers into polar coordinates
+
+```{r}
+xy <- runif(2)
+theta = atan(xy[2]/xy[1])
+r = (xy[2]^2 + xy[1]^2)^0.5
+
+```
+
+### Problem 4
+
+```{r}
+#start: animals lined up to enter Noah’s Ark
+queue <- c("sheep", "fox", "owl", "ant")
+
+#a: the serpent arrives and gets in line 
+queue <- c(queue,"serpent")
+
+#b: the sheep enters the ark 
+queue <- queue[! queue %in% c('sheep')]
+
+#c: the donkey arrives and talks his way to the front of the line;
+queue <- append(queue, "donkey", after = 0)
+
+#d: the serpent gets impatient and leaves;
+queue <- queue[! queue %in% c('serpent')]
+
+#e: the owl gets bored and leaves;
+queue <- queue[! queue %in% c('owl')]
+
+#f: the aphid arrives and the ant invites him to cut in line.
+queue <- append(queue, "aphid", after = 2)
+
+#g:Finally, determine the position of the aphid in the line.
+which(queue == "aphid")
+
+```
+
+### Problem 5
+Use R to create a vector of all of the integers from 1 to 100 that are not divisible by 2, 3, or 7. 
+
+```{r}
+
+odd <- c(seq(from = 1, to = 100))
+odd <- which(!odd %% 2 == 0, arr.ind = TRUE)
+odd <- which(!odd %% 3 == 0, arr.ind = TRUE)
+odd <- which(!odd %% 7 == 0, arr.ind = TRUE)
+
+
+```
