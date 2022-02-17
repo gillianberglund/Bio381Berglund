@@ -1,8 +1,6 @@
 ---
 title: "Gillian Berglund's Homework Assignments"
-output: 
-  html_document: 
-    theme: cosmo
+output: html_document 
 ---
 
 ```{r setup, include=FALSE}
