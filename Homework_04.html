@@ -206,36 +206,46 @@ r = (xy[2]^2 + xy[1]^2)^0.5</code></pre>
 <h3>Problem 4</h3>
 <pre class="r"><code>#start: animals lined up to enter Noah’s Ark
 queue &lt;- c(&quot;sheep&quot;, &quot;fox&quot;, &quot;owl&quot;, &quot;ant&quot;)
-
-#a: the serpent arrives and gets in line 
+print(queue)</code></pre>
+<pre><code>## [1] &quot;sheep&quot; &quot;fox&quot;   &quot;owl&quot;   &quot;ant&quot;</code></pre>
+<pre class="r"><code>#a: the serpent arrives and gets in line 
 queue &lt;- c(queue,&quot;serpent&quot;)
-
-#b: the sheep enters the ark 
+print(queue)</code></pre>
+<pre><code>## [1] &quot;sheep&quot;   &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>#b: the sheep enters the ark 
 queue &lt;- queue[! queue %in% c(&#39;sheep&#39;)]
-
-#c: the donkey arrives and talks his way to the front of the line;
+print(queue)</code></pre>
+<pre><code>## [1] &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>#c: the donkey arrives and talks his way to the front of the line;
 queue &lt;- append(queue, &quot;donkey&quot;, after = 0)
-
-#d: the serpent gets impatient and leaves;
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot;  &quot;fox&quot;     &quot;owl&quot;     &quot;ant&quot;     &quot;serpent&quot;</code></pre>
+<pre class="r"><code>#d: the serpent gets impatient and leaves;
 queue &lt;- queue[! queue %in% c(&#39;serpent&#39;)]
-
-#e: the owl gets bored and leaves;
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;owl&quot;    &quot;ant&quot;</code></pre>
+<pre class="r"><code>#e: the owl gets bored and leaves;
 queue &lt;- queue[! queue %in% c(&#39;owl&#39;)]
-
-#f: the aphid arrives and the ant invites him to cut in line.
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;ant&quot;</code></pre>
+<pre class="r"><code>#f: the aphid arrives and the ant invites him to cut in line.
 queue &lt;- append(queue, &quot;aphid&quot;, after = 2)
-
-#g:Finally, determine the position of the aphid in the line.
+print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;aphid&quot;  &quot;ant&quot;</code></pre>
+<pre class="r"><code>#g:Finally, determine the position of the aphid in the line.
 which(queue == &quot;aphid&quot;)</code></pre>
 <pre><code>## [1] 3</code></pre>
+<pre class="r"><code>print(queue)</code></pre>
+<pre><code>## [1] &quot;donkey&quot; &quot;fox&quot;    &quot;aphid&quot;  &quot;ant&quot;</code></pre>
 </div>
 <div id="problem-5" class="section level3">
 <h3>Problem 5</h3>
 <p>Use R to create a vector of all of the integers from 1 to 100 that are not divisible by 2, 3, or 7.</p>
 <pre class="r"><code>odd &lt;- c(seq(from = 1, to = 100))
-odd &lt;- which(!odd %% 2 == 0, arr.ind = TRUE)
-odd &lt;- which(!odd %% 3 == 0, arr.ind = TRUE)
-odd &lt;- which(!odd %% 7 == 0, arr.ind = TRUE)</code></pre>
+integers &lt;- which(odd%%2 != 0 &amp; odd%%3 !=0 &amp; odd%%7 !=0)
+print(integers)</code></pre>
+<pre><code>##  [1]  1  5 11 13 17 19 23 25 29 31 37 41 43 47 53 55 59 61 65 67 71 73 79 83 85
+## [26] 89 95 97</code></pre>
 </div>
 
 

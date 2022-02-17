@@ -123,9 +123,10 @@ dataFrame[!complete.cases(dataFrame),]
 ```
 **for the second variable, sort it in alphabetical order**
 ```{r}
-
+dataFrame <- dataFrame[order(my_letters),]
+print(dataFrame)
 ```
 **calculate the column mean for the first variable.**
 ```{r}
-
+mean(dataFrame$my_unis[!is.na(dataFrame$my_unis)])
 ```

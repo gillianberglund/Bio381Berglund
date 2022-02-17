@@ -65,3 +65,16 @@ print(dataFrame)
 dataFrame[!complete.cases(dataFrame),]
 
 
+# Homework 4:
+
+odd <- c(seq(from = 1, to = 100))
+integers <- which(odd%%2 != 0 & odd%%3 !=0 & odd%%7 !=0)
+
+which(odd%%2 != 0 & odd%%3 !=0 & odd%%7 !=0)
+which(odd%%3 !=0)
+which(odd%%7 !=0)
+
+integers <- c(which(odd%%7 !=0),which(odd%%3 !=0),which(odd%%2 != 0))
+print(integers)
+
+integers <- which(odd%%2 != 0 & odd%%3 !=0 & odd%%7 !=0)

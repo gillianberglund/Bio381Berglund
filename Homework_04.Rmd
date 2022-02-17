@@ -51,24 +51,31 @@ r = (xy[2]^2 + xy[1]^2)^0.5
 ```{r}
 #start: animals lined up to enter Noah’s Ark
 queue <- c("sheep", "fox", "owl", "ant")
+print(queue)
 
 #a: the serpent arrives and gets in line 
 queue <- c(queue,"serpent")
+print(queue)
 
 #b: the sheep enters the ark 
 queue <- queue[! queue %in% c('sheep')]
+print(queue)
 
 #c: the donkey arrives and talks his way to the front of the line;
 queue <- append(queue, "donkey", after = 0)
+print(queue)
 
 #d: the serpent gets impatient and leaves;
 queue <- queue[! queue %in% c('serpent')]
+print(queue)
 
 #e: the owl gets bored and leaves;
 queue <- queue[! queue %in% c('owl')]
+print(queue)
 
 #f: the aphid arrives and the ant invites him to cut in line.
 queue <- append(queue, "aphid", after = 2)
+print(queue)
 
 #g:Finally, determine the position of the aphid in the line.
 which(queue == "aphid")
@@ -81,9 +88,7 @@ Use R to create a vector of all of the integers from 1 to 100 that are not divis
 ```{r}
 
 odd <- c(seq(from = 1, to = 100))
-odd <- which(!odd %% 2 == 0, arr.ind = TRUE)
-odd <- which(!odd %% 3 == 0, arr.ind = TRUE)
-odd <- which(!odd %% 7 == 0, arr.ind = TRUE)
-
+integers <- which(odd%%2 != 0 & odd%%3 !=0 & odd%%7 !=0)
+print(integers)
 
 ```
