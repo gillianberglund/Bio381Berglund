@@ -1,0 +1,68 @@
+---
+title: "Homework_08"
+author: "Gillian Berglund"
+date: "3/16/2022"
+output: 
+  html_document: 
+    theme: cosmo
+---
+# Creating Fake Data Sets To Explore Hypotheses
+
+
+#### Expected pattern for a given hypothesis: 
+If a given signaling molecule (G) is upregulating the transcription of another peptide in cells, you would expect greater abundance of peptides in cells treated with G
+
+#### Creating Data that supports hypothesis 
+```{r}
+groupWith <- rnorm(n=45, mean = 0.84 , sd = 0.1)
+hist(groupWith)
+
+groupWithOut <- rnorm(n=45, mean = 0.33, sd = 0.12)
+hist(groupWithOut)
+
+DataFrame <- data.frame(1:45, groupWith, groupWithOut)
+```
+
+#### Creating a Random Data Frame (for ANOVA)
+
+Followed ANOVA example used in class during Lecture 12
+
+```{r}
+n_group <- 2
+n_name <- c("withG", "withoutG")
+n_size <- c(45,45)
+n_mean <- c(0.84,0.33)
+n_sd <- c(0.1,0.12)
+
+ID <- 1:sum(n_size)
+
+proportions <- c(rnorm(n=n_size[1],mean=n_mean[1],sd=n_sd[1]),
+             rnorm(n=n_size[2],mean=n_mean[2],sd=n_sd[2]))
+
+trt_group <- rep(n_name,n_size)
+
+ano_data <- data.frame(ID,trt_group,proportions)
+head(ano_data)
+
+```
+
+#### Statistical Analysis & GG Plot
+
+```{r}
+ano_model <- aov(proportions~trt_group,data=ano_data)
+print(ano_model)
+z <- summary(ano_model)
+print(z)
+flat_out <- unlist(z)
+ano_stats <- list(f_ratio <- unlist(z)[7],
+                  f_pval <- unlist(z)[9])
+print(ano_stats)
+
+library(ggplot2)
+ano_plot <- ggplot(ano_data) +
+            aes(x=trt_group,y=proportions) +
+            geom_boxplot()
+print(ano_plot)
+```
+
+#### Adjusting Mean and effect sizes for Data Set

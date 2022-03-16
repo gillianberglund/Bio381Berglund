@@ -172,19 +172,34 @@ pSpecial + statSpecial
 
 ### Simulating New Data Set
 ```{r}
-# normPars <- fitdistr(z$z.WhitePopVax,"normal")
-# print(normPars) 
-# 
-# SimData <- rgamma(n=z$X1.46, shape = , scale = )
-# 
-# SimData <- data.frame(1:46, SimData)
-# 
-# p2 <- ggplot(data=SimData, aes(x=SimData, y=..density..)) +
-#   geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
-# print(p2)
-# ```
-# **Add empirical density curve**
-# ```{r}
-# p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
-# print(p1)
+normPars <- fitdistr(z$z.WhitePopVax,"normal")
+print(normPars) 
+
+SimData <- rnorm(n=z$X1.46, mean = normPars$estimate["mean"], sd = normPars$estimate["sd"])
+
+SimData <- data.frame(1:46, SimData)
+
+p2 <- ggplot(data=SimData, aes(x=SimData, y=..density..)) +
+    geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+ print(p2)
+ 
+
+gammaPars <- fitdistr(SimData$SimData,"gamma")
+shapeML <- gammaPars$estimate["shape"]
+rateML <- gammaPars$estimate["rate"]
+
+stat <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(SimData$SimData), args = list(shape=shapeML, rate=rateML))
+ p2 + stat
+ 
+```
+
+#### Graph of Original Data Set:
+```{r}
+p1 + stat4
+```
+
+#### Graph of Simulated Data Set:
+The probability curves look very similar across the original data set and the simulated data set! 
+```{r}
+p2 + stat
 ```
