@@ -172,11 +172,19 @@ pSpecial + statSpecial
 
 ### Simulating New Data Set
 ```{r}
-normPars <- fitdistr(z$z.WhitePopVax,"normal")
-print(normPars)
-
-normPars$estimate["mean"] # gives just mean 
-
-simData <- rgamma
-
+# normPars <- fitdistr(z$z.WhitePopVax,"normal")
+# print(normPars) 
+# 
+# SimData <- rgamma(n=z$X1.46, shape = , scale = )
+# 
+# SimData <- data.frame(1:46, SimData)
+# 
+# p2 <- ggplot(data=SimData, aes(x=SimData, y=..density..)) +
+#   geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
+# print(p2)
+# ```
+# **Add empirical density curve**
+# ```{r}
+# p1 <-  p1 +  geom_density(linetype="dotted",size=0.75)
+# print(p1)
 ```
