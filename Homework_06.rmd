@@ -98,7 +98,8 @@ library(MASS) # for maximum likelihood estimation
 
 ```{r}
 # load in data
-z <- read.table("mydata.csv",header=TRUE,sep=",")
+z <- read.table("raw_data.csv",header=TRUE,sep=",")
+z <- data.frame(1:46,z$WhitePopVax)
 head(z)
 str(z)
 summary(z)
@@ -106,7 +107,7 @@ summary(z)
 
 **Plot histogram of data**
 ```{r}
-p1 <- ggplot(data=z, aes(x=Prvlnc, y=..density..)) +
+p1 <- ggplot(data=z, aes(x=z.WhitePopVax, y=..density..)) +
   geom_histogram(color="grey60",fill="cornsilk",size=0.2) 
 print(p1)
 ```
@@ -117,7 +118,7 @@ print(p1)
 ```
 **Get maximum likelihood parameters for normal**
 ```{r}
-normPars <- fitdistr(z$Prvlnc,"normal")
+normPars <- fitdistr(z$z.WhitePopVax,"normal")
 print(normPars) # provides mean and sd
 str(normPars) # is a list of 5
 normPars$estimate["mean"] # note structure of getting a named attribute
@@ -127,55 +128,55 @@ normPars$estimate["mean"] # note structure of getting a named attribute
 meanML <- normPars$estimate["mean"]
 sdML <- normPars$estimate["sd"]
 
-xval <- seq(0,max(z$Prvlnc),len=length(z$Prvlnc))
+xval <- seq(0,max(z$z.WhitePopVax),len=length(z$z.WhitePopVax))
 
-stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(z$myVar), args = list(mean = meanML, sd = sdML))
+stat <- stat_function(aes(x = xval, y = ..y..), fun = dnorm, colour="red", n = length(z$z.WhitePopVax), args = list(mean = meanML, sd = sdML))
  p1 + stat
 ```
 **Plot exponential probability density**
 ```{r}
-expoPars <- fitdistr(z$Prvlnc,"exponential")
+expoPars <- fitdistr(z$z.WhitePopVax,"exponential")
 rateML <- expoPars$estimate["rate"]
 
-stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(z$Prvlnc), args = list(rate=rateML))
+stat2 <- stat_function(aes(x = xval, y = ..y..), fun = dexp, colour="blue", n = length(z$z.WhitePopVax), args = list(rate=rateML))
  p1 + stat + stat2
 ```
 **Plot uniform probability density**
 ```{r}
-stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(z$Prvlnc), args = list(min=min(z$Prvlnc), max=max(z$Prvlnc)))
+stat3 <- stat_function(aes(x = xval, y = ..y..), fun = dunif, colour="darkgreen", n = length(z$z.WhitePopVax), args = list(min=min(z$z.WhitePopVax), max=max(z$z.WhitePopVax)))
 p1 + stat + stat2 + stat3
 ```
 **Plot gamma probability density**
 ```{r}
-is.finite(z$Prvlnc)
-gammaPars <- fitdistr(z$Prvlnc,"gamma")
+gammaPars <- fitdistr(z$z.WhitePopVax,"gamma")
 shapeML <- gammaPars$estimate["shape"]
 rateML <- gammaPars$estimate["rate"]
 
-stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(z$Prvlnc), args = list(shape=shapeML, rate=rateML))
+stat4 <- stat_function(aes(x = xval, y = ..y..), fun = dgamma, colour="brown", n = length(z$z.WhitePopVax), args = list(shape=shapeML, rate=rateML))
  p1 + stat + stat2 + stat3 + stat4
 ```
 **Plot beta probability density**
 ```{r}
-pSpecial <- ggplot(data=z, aes(x=Prvlnc/(max(Prvlnc + 0.1)), y=..density..)) +
+pSpecial <- ggplot(data=z, aes(x=z.WhitePopVax/(max(z.WhitePopVax + 0.1)), y=..density..)) +
   geom_histogram(color="grey60",fill="cornsilk",size=0.2) + 
   xlim(c(0,1)) +
   geom_density(size=0.75,linetype="dotted")
 
-betaPars <- fitdistr(x=z$Prvlnc/max(z$Prvlnc + 0.1),start=list(shape1=1,shape2=2),"beta")
+betaPars <- fitdistr(x=z$z.WhitePopVax/max(z$z.WhitePopVax + 0.1),start=list(shape1=1,shape2=2),"beta")
 shape1ML <- betaPars$estimate["shape1"]
 shape2ML <- betaPars$estimate["shape2"]
 
-statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(z$myVar), args = list(shape1=shape1ML,shape2=shape2ML))
+statSpecial <- stat_function(aes(x = xval, y = ..y..), fun = dbeta, colour="orchid", n = length(z$z.WhitePopVax), args = list(shape1=shape1ML,shape2=shape2ML))
 pSpecial + statSpecial
 ```
 
 ### Simulating New Data Set
 ```{r}
-normPars <- fitdistr(z$Prvlnc,"normal")
-print(normPars) # provides mean and sd
-str(normPars) # is a list of 5
-normPars$estimate["mean"] # note structure of getting a named attribute
+normPars <- fitdistr(z$z.WhitePopVax,"normal")
+print(normPars)
 
-# simData <- 0:1 
+normPars$estimate["mean"] # gives just mean 
+
+simData <- rgamma
+
 ```
