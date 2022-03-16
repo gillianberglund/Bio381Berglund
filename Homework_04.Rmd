@@ -8,8 +8,7 @@ output:
 ---
 
 ### Problem 1 
-
-
+Suppose x = 1.1, a = 2.2, and b = 3.3. Assign each expression to the value of the variable z and print the value stored in z.
 ``` {r}
 x <- 1.1
 a <- 2.2
@@ -26,13 +25,14 @@ print(z)
 ```
 
 ### Problem 2 
-
+Using the rep and seq functions, create the following vectors:
 ```{r}
 a <- c(seq(from = 1, to = 8),seq(from = 7, to = 1))
-
+print(a)
 b <- rep(1:5, c(1,2,3,4,5))
-
+print(b)
 c <- rep(5:1, c(1,2,3,4,5))
+print(c)
   
 ```
 

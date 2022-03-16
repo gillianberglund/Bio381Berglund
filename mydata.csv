@@ -1,0 +1,304 @@
+﻿Cond,Prvlnc
+Alcohol Abuse,0.0077
+Alcohol Abuse,0.0306
+Alcohol Abuse,0.0116
+Alcohol Abuse,0.0167
+Alcohol Abuse,0.0447
+Alcohol Abuse,0.0244
+Alcohol Abuse,0.0373
+Alcohol Abuse,0.0908
+Alcohol Abuse,0.0534
+Alcohol Abuse,0.0307
+Alcohol Abuse,0.0536
+Alcohol Abuse,0.0401
+Alcohol Abuse,0.0192
+Alcohol Abuse,0.0615
+Alcohol Abuse,0.0254
+Alzheimer's Disease/Dementia,0.0833
+Alzheimer's Disease/Dementia,0.0262
+Alzheimer's Disease/Dementia,0.0734
+Alzheimer's Disease/Dementia,0.0741
+Alzheimer's Disease/Dementia,0.0301
+Alzheimer's Disease/Dementia,0.062
+Alzheimer's Disease/Dementia,0.0348
+Alzheimer's Disease/Dementia,0.0838
+Alzheimer's Disease/Dementia,0.1213
+Alzheimer's Disease/Dementia,0.0247
+Alzheimer's Disease/Dementia,0.0817
+Alzheimer's Disease/Dementia,0.0919
+Alzheimer's Disease/Dementia,0.0319
+Alzheimer's Disease/Dementia,0.0831
+Arthritis,0.1787
+Arthritis,0.1074
+Arthritis,0.1664
+Arthritis,0.2274
+Arthritis,0.2081
+Arthritis,0.2221
+Arthritis,0.3291
+Arthritis,0.265
+Arthritis,0.3097
+Arthritis,0.2442
+Arthritis,0.202
+Arthritis,0.2269
+Arthritis,0.296
+Arthritis,0.2442
+Arthritis,0.2884
+Asthma,0.0311
+Asthma,0.0498
+Asthma,0.0343
+Asthma,0.0363
+Asthma,0.0654
+Asthma,0.0443
+Asthma,0.0455
+Asthma,0.0901
+Asthma,0.0589
+Asthma,0.0422
+Asthma,0.0783
+Asthma,0.057
+Asthma,0.0397
+Asthma,0.0652
+Asthma,0.0435
+Atrial Fibrillation,0.0457
+Atrial Fibrillation,0.0218
+Atrial Fibrillation,0.0416
+Atrial Fibrillation,0.046
+Atrial Fibrillation,0.0191
+Atrial Fibrillation,0.0386
+Atrial Fibrillation,0.0765
+Atrial Fibrillation,0.0204
+Atrial Fibrillation,0.0596
+Atrial Fibrillation,0.052
+Atrial Fibrillation,0.0159
+Atrial Fibrillation,0.0372
+Atrial Fibrillation,0.0885
+Atrial Fibrillation,0.0222
+Atrial Fibrillation,0.0788
+Autism Spectrum Disorders,0
+Autism Spectrum Disorders,0.0227
+Autism Spectrum Disorders,0.0039
+Autism Spectrum Disorders,0
+Autism Spectrum Disorders,0.0094
+Autism Spectrum Disorders,0.0026
+Autism Spectrum Disorders,0
+Autism Spectrum Disorders,0.0129
+Autism Spectrum Disorders,0.0039
+Autism Spectrum Disorders,0.0063
+Autism Spectrum Disorders,0.0003
+Autism Spectrum Disorders,0.0149
+Autism Spectrum Disorders,0.0024
+COPD,0.0455
+COPD,0.0341
+COPD,0.0435
+COPD,0.056
+COPD,0.049
+COPD,0.0541
+COPD,0.125
+COPD,0.1098
+COPD,0.1204
+COPD,0.086
+COPD,0.0636
+COPD,0.0768
+COPD,0.0919
+COPD,0.1017
+COPD,0.0933
+Cancer,0.0544
+Cancer,0.0245
+Cancer,0.0493
+Cancer,0.0486
+Cancer,0.0191
+Cancer,0.0405
+Cancer,0.0628
+Cancer,0.0227
+Cancer,0.0507
+Cancer,0.0889
+Cancer,0.0206
+Cancer,0.0609
+Cancer,0.082
+Cancer,0.0249
+Cancer,0.0736
+Chronic Kidney Disease,0.1986
+Chronic Kidney Disease,0.2323
+Chronic Kidney Disease,0.2044
+Chronic Kidney Disease,0.224
+Chronic Kidney Disease,0.2609
+Chronic Kidney Disease,0.2341
+Chronic Kidney Disease,0.2754
+Chronic Kidney Disease,0.212
+Chronic Kidney Disease,0.2563
+Chronic Kidney Disease,0.3036
+Chronic Kidney Disease,0.2261
+Chronic Kidney Disease,0.2718
+Chronic Kidney Disease,0.198
+Chronic Kidney Disease,0.1656
+Chronic Kidney Disease,0.1932
+Depression,0.0851
+Depression,0.2017
+Depression,0.1053
+Depression,0.127
+Depression,0.2704
+Depression,0.1663
+Depression,0.1714
+Depression,0.2861
+Depression,0.206
+Depression,0.1422
+Depression,0.2208
+Depression,0.1744
+Depression,0.1548
+Depression,0.2993
+Depression,0.176
+Diabetes,0.285
+Diabetes,0.2541
+Diabetes,0.2797
+Diabetes,0.3303
+Diabetes,0.3196
+Diabetes,0.3274
+Diabetes,0.3533
+Diabetes,0.268
+Diabetes,0.3275
+Diabetes,0.3171
+Diabetes,0.242
+Diabetes,0.2863
+Diabetes,0.2026
+Diabetes,0.1982
+Diabetes,0.2019
+Drug/Substance Abuse,0.0113
+Drug/Substance Abuse,0.083
+Drug/Substance Abuse,0.0237
+Drug/Substance Abuse,0.0215
+Drug/Substance Abuse,0.1003
+Drug/Substance Abuse,0.0432
+Drug/Substance Abuse,0.0491
+Drug/Substance Abuse,0.1522
+Drug/Substance Abuse,0.0802
+Drug/Substance Abuse,0.0574
+Drug/Substance Abuse,0.139
+Drug/Substance Abuse,0.0908
+Drug/Substance Abuse,0.0268
+Drug/Substance Abuse,0.1388
+Drug/Substance Abuse,0.0432
+HIV/AIDS,0.0036
+HIV/AIDS,0
+HIV/AIDS,0.0098
+HIV/AIDS,0.003
+HIV/AIDS,0.0094
+HIV/AIDS,0.0007
+HIV/AIDS,0.0079
+HIV/AIDS,0.0017
+Heart Failure,0.0873
+Heart Failure,0.0882
+Heart Failure,0.0875
+Heart Failure,0.0977
+Heart Failure,0.0873
+Heart Failure,0.0948
+Heart Failure,0.158
+Heart Failure,0.0901
+Heart Failure,0.1375
+Heart Failure,0.1491
+Heart Failure,0.1148
+Heart Failure,0.1351
+Heart Failure,0.1234
+Heart Failure,0.0783
+Heart Failure,0.1168
+Hepatitis (Chronic Viral B & C),0.017
+Hepatitis (Chronic Viral B & C),0.0402
+Hepatitis (Chronic Viral B & C),0.021
+Hepatitis (Chronic Viral B & C),0.0073
+Hepatitis (Chronic Viral B & C),0.0181
+Hepatitis (Chronic Viral B & C),0.0103
+Hepatitis (Chronic Viral B & C),0.0164
+Hepatitis (Chronic Viral B & C),0.0462
+Hepatitis (Chronic Viral B & C),0.0254
+Hepatitis (Chronic Viral B & C),0.0434
+Hepatitis (Chronic Viral B & C),0.0383
+Hepatitis (Chronic Viral B & C),0.0413
+Hepatitis (Chronic Viral B & C),0.0067
+Hepatitis (Chronic Viral B & C),0.0307
+Hepatitis (Chronic Viral B & C),0.0102
+Hyperlipidemia,0.3415
+Hyperlipidemia,0.1939
+Hyperlipidemia,0.316
+Hyperlipidemia,0.3037
+Hyperlipidemia,0.2242
+Hyperlipidemia,0.2818
+Hyperlipidemia,0.3389
+Hyperlipidemia,0.187
+Hyperlipidemia,0.2931
+Hyperlipidemia,0.2794
+Hyperlipidemia,0.1696
+Hyperlipidemia,0.2344
+Hyperlipidemia,0.3674
+Hyperlipidemia,0.2128
+Hyperlipidemia,0.3447
+Hypertension,0.4413
+Hypertension,0.2891
+Hypertension,0.4149
+Hypertension,0.4436
+Hypertension,0.3436
+Hypertension,0.4161
+Hypertension,0.5296
+Hypertension,0.3535
+Hypertension,0.4765
+Hypertension,0.5268
+Hypertension,0.3622
+Hypertension,0.4593
+Hypertension,0.4714
+Hypertension,0.3073
+Hypertension,0.4473
+Ischemic Heart Disease,0.1447
+Ischemic Heart Disease,0.0996
+Ischemic Heart Disease,0.1369
+Ischemic Heart Disease,0.1567
+Ischemic Heart Disease,0.1192
+Ischemic Heart Disease,0.1464
+Ischemic Heart Disease,0.2421
+Ischemic Heart Disease,0.1151
+Ischemic Heart Disease,0.2037
+Ischemic Heart Disease,0.1946
+Ischemic Heart Disease,0.1196
+Ischemic Heart Disease,0.1638
+Ischemic Heart Disease,0.2094
+Ischemic Heart Disease,0.1156
+Ischemic Heart Disease,0.1956
+Osteoporosis,0.0767
+Osteoporosis,0.0236
+Osteoporosis,0.0675
+Osteoporosis,0.0472
+Osteoporosis,0.0163
+Osteoporosis,0.0388
+Osteoporosis,0.052
+Osteoporosis,0.0189
+Osteoporosis,0.042
+Osteoporosis,0.0174
+Osteoporosis,0.0617
+Osteoporosis,0.0213
+Osteoporosis,0.0557
+Schizophrenia and Other Psychotic Disorders,0.0086
+Schizophrenia and Other Psychotic Disorders,0.1301
+Schizophrenia and Other Psychotic Disorders,0.0296
+Schizophrenia and Other Psychotic Disorders,0.0082
+Schizophrenia and Other Psychotic Disorders,0.0794
+Schizophrenia and Other Psychotic Disorders,0.0278
+Schizophrenia and Other Psychotic Disorders,0.0108
+Schizophrenia and Other Psychotic Disorders,0.0901
+Schizophrenia and Other Psychotic Disorders,0.0347
+Schizophrenia and Other Psychotic Disorders,0.0258
+Schizophrenia and Other Psychotic Disorders,0.1125
+Schizophrenia and Other Psychotic Disorders,0.0614
+Schizophrenia and Other Psychotic Disorders,0.0085
+Schizophrenia and Other Psychotic Disorders,0.0812
+Schizophrenia and Other Psychotic Disorders,0.0192
+Stroke,0.0278
+Stroke,0.0201
+Stroke,0.0264
+Stroke,0.0254
+Stroke,0.0209
+Stroke,0.0242
+Stroke,0.0304
+Stroke,0.0121
+Stroke,0.0249
+Stroke,0.0389
+Stroke,0.023
+Stroke,0.0324
+Stroke,0.028
+Stroke,0.0159
+Stroke,0.0262

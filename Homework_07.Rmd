@@ -1,0 +1,63 @@
+---
+title: "Homework_07"
+author: "Gillian Berglund"
+date: "3/2/2022"
+output: 
+  html_document: 
+    theme: cosmo
+---
+### Problem 1: Examine structure of Iris dataset
+```{r}
+library(tidyverse)
+data(iris)
+glimpse(iris)
+```
+**Dataset has 150 observations and 5 variables**
+
+### Problem 2: Create iris1 with only the species virginica and versicolor with sepal lengths longer than 6 cm and sepal widths longer than 2.5 cm. How many observations and variables are in the dataset?
+```{r}
+iris1 <- filter(iris, Species%in%c("virginica","versicolor"), Sepal.Length > 6, Sepal.Width > 2.5)
+glimpse(iris1)
+```
+**Dataset has 56 observations and 5 variables** 
+
+### Problem 3: create iris2 from iris1 that contains only the columns for Species, Sepal.Length, and Sepal.Width. How many observations and variables are in the dataset?
+```{r}
+iris2 <- select(iris1, Species, Sepal.Length, Sepal.Width)
+glimpse(iris2)
+```
+**Iris2 has 56 observations and 3 variables**
+
+### Problem 4: create iris3 from iris2 that orders the observations from largest to smallest sepal length. Show the first 6 rows of this dataset
+
+```{r}
+iris3 <- arrange(iris2, by=desc(Sepal.Length))
+head(iris3)
+```
+
+### Problem 5: Create iris4 from iris3 that creates a column with a sepal area (length * width) value for each observation. How many observations and variables are in the dataset?
+
+```{r}
+iris4 <- mutate(iris3, Sepal.Area = Sepal.Length*Sepal.Width)
+glimpse(iris4)
+```
+**Data set has 56 observations and 4 variables**
+
+### Problem 6: Create iris5 that calculates the average sepal length, the average sepal width, and the sample size of the entire iris4 data frame and print iris5
+```{r}
+iris5 <- summarize(iris4, meanSepalLength=mean(Sepal.Length), meanSepalWidth=mean(Sepal.Width), N = n())
+
+glimpse(iris5)
+```
+### Problem 7: Create iris6 that calculates the average sepal length, the average sepal width, and the sample size for each species of in the iris4 data frame and print iris6.
+```{r}
+iris6 <- group_by(iris4, Species) 
+iris6 <- summarize(iris6, meanSepalLength=mean(Sepal.Length), meanSepalWidth=mean(Sepal.Width), TotalN = n())
+print(iris6)
+```
+### Problem 8: rework all of your previous statements into an extended piping operation that uses iris as the input and generates iris6 as the output
+```{r}
+```
+### Problem 9: Create a ‘longer’ data frame with three columns named: Species, Measure, Value
+```{r}
+```
