@@ -93,3 +93,7 @@ psi <- inv.logit(pre.probs)
 # create new occupancy data:
 occ2 <- rbinom(n=20, size = 1, prob = psi)
 print(occ2)
+
+
+
+

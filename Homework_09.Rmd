@@ -1,0 +1,38 @@
+---
+title: "Homework_09.2"
+author: "Gillian Berglund"
+date: "3/23/2022"
+output: 
+  html_document: 
+    theme: cosmo
+---
+# Organizing Code With Structured Programming
+## Description ----------------------------------
+#### description of script: creating fake data sets for hypothesis testing
+
+####  23 Mar 2022
+#### GB
+
+## Initialize -----------------------------------
+```{r}
+library(tidyverse)
+library(ggplot2)
+```
+
+## Load Functions -------------------------------
+```{r}
+source("Functions/sim_anova_data.R")  
+source("Functions/run_anova.R")  
+source("Functions/graph_anova.R")  
+```
+## Global Variables -----------------------------
+
+## Program Body ---------------------------------
+```{r}
+ano_data <- sim_anova_data()
+head(ano_data)
+
+run_anova()
+graph_results()
+
+```
