@@ -9,29 +9,32 @@ output:
 # Creating Fake Data Sets To Explore Hypotheses
 
 
-#### Expected pattern for a given hypothesis: 
-If a given signaling molecule (G) is upregulating the transcription of another peptide in cells, you would expect greater abundance of peptides in cells treated with G
+### 1. Expected pattern for a given hypothesis: 
 
-#### Creating Data that supports hypothesis 
+If a given signaling molecule is upregulating the transcription of another protein in cells, you would expect a greater amount of mRNA for the protein in cells treated with the signaling molecule. 
+
+Data set represents relative mRNA levels detected by rtPCR for protein X in cell populations. 
+
+### 2 & 3. Creating Dataframe with Data that supports hypothesis 
 ```{r}
-groupWith <- rnorm(n=45, mean = 0.84 , sd = 0.1)
-hist(groupWith)
+groupWith <- rnorm(n=15, mean = 0.72 , sd = 0.1)
+groupWithOut <- rnorm(n=15, mean = 0.40, sd = 0.12)
 
-groupWithOut <- rnorm(n=45, mean = 0.33, sd = 0.12)
+hist(groupWith)
 hist(groupWithOut)
 
-DataFrame <- data.frame(1:45, groupWith, groupWithOut)
+DataFrame <- data.frame(1:15, groupWith, groupWithOut)
 ```
 
-#### Creating a Random Data Frame (for ANOVA)
+### 4. Creating a Random Data Frame (for ANOVA)
 
 Followed ANOVA example used in class during Lecture 12
 
 ```{r}
 n_group <- 2
-n_name <- c("withG", "withoutG")
-n_size <- c(45,45)
-n_mean <- c(0.84,0.33)
+n_name <- c("with", "without")
+n_size <- c(15,15)
+n_mean <- c(0.72,0.40)
 n_sd <- c(0.1,0.12)
 
 ID <- 1:sum(n_size)
@@ -45,7 +48,6 @@ ano_data <- data.frame(ID,trt_group,proportions)
 head(ano_data)
 
 ```
-
 #### Statistical Analysis & GG Plot
 
 ```{r}
@@ -65,4 +67,8 @@ ano_plot <- ggplot(ano_data) +
 print(ano_plot)
 ```
 
-#### Adjusting Mean and effect sizes for Data Set
+### 6. Adjusting Mean and Effect sizes for Data Set
+With a sample size of 15, any effect size smaller than .12 won't reliably produce a significant result. 
+
+### 7. Adjusting Sample Sizes:
+With an effect size of .32 between groups, you would need a sample size of at least 5 to consistently get a significant result.  
