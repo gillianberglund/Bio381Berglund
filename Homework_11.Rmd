@@ -1,0 +1,50 @@
+---
+title: "Homework_11"
+author: "Gillian Berglund"
+date: "4/6/2022"
+output: 
+  html_document: 
+    theme: cosmo
+---
+
+### Batch Processing Homework
+**Purpose: Produce 1 csv file from all the peptide tables from 1 mass spec experiment.**  
+**Input: peptide csv files downloaded from GFY, one table for each sample run.**  
+**Output: 1 csv file with all the peptide tables combined**
+
+```{r}
+#--------------------------------------------
+# Global variables
+file_folder <- "GFYFiles/"
+n_files <- 8
+file_out <- "PeptideTablesDate.csv"
+file_names <- list.files(path=file_folder)
+#--------------------------------------------
+```
+
+```{r}
+# batch process by looping through individual files
+
+for (i in seq_along(file_names)) {
+  data <- read.table(file=paste(file_folder,file_names[i],sep=""),
+                     sep=",",
+                     header=TRUE)
+  write.table(cat("# Combinded peptide tables for ",
+                "Date Mass Spec","\n",
+                "# timestamp: ",as.character(Sys.time()),"\n",
+                "# GB","\n",
+                "# ------------------------", "\n",
+                "\n",
+                file=file_out,
+                row.names="",
+                col.names="",
+                sep=""))
+  
+  write.table(x=data,
+            file=file_out,
+            row.names=FALSE,
+            col.names=TRUE,
+            sep=",",
+            append=TRUE)
+}
+```

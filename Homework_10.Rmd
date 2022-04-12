@@ -33,17 +33,17 @@ length(myvectorsub)
 **Write a function that takes as input two integers representing the number of rows and columns in a matrix.**
 
 ```{r}
-x <- sample(1:10,1)
-y <- sample(1:10,1)
 
-mat <- matrix(nrow = x, ncol = y)
 
-for(i in 1:x){
-  for(j in 1:y){
-    mat[i,j] <- i*j
-  }
-}
-print(mat)
+#make_matrix <- function(row=5,col=6) {
+  #mat <- matrix(nrow = row, ncol = col)
+  
+ # for(i in 1:row{
+ # for(j in 1:col){
+ #   mat[i,j] <- i*j
+ # }
+#  }
+#}
     
 ```
 
@@ -65,9 +65,19 @@ head(Group.df)
 **PART B: Write a custom function that 1) reshuffles the response variable, and 2) calculates the mean of each group in the reshuffled data. Store the means in a vector of length 3.**
 
 ```{r}
-myfunction <- function(){
+library(dplyr)
+
+shuffle_data <- function(){
   
-  return()
+  ShuffResVar <- sample(Group.df$ResVar)
+  Shuff.df <- data.frame(Groups, ShuffResVar)
+  
+  Averages <- Shuff.df %>%
+    group_by(Groups) %>%
+    summarise_at(vars(ShuffResVar), list(name=mean))
+
+  averages<-(Averages$name)
+  
 }
 
 
