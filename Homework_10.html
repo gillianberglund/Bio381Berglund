@@ -183,27 +183,32 @@ for(i in 1:length(myvector)){
 }
 
 print(counter)</code></pre>
-<pre><code>## [1] 7</code></pre>
+<pre><code>## [1] 6</code></pre>
 </div>
 <div id="problem-2" class="section level3">
 <h3>Problem 2:</h3>
 <p><strong>Use subsetting instead of a loop to rewrite the function as a single line of code.</strong></p>
 <pre class="r"><code>myvectorsub &lt;- myvector[myvector == 0]
 length(myvectorsub)</code></pre>
-<pre><code>## [1] 7</code></pre>
+<pre><code>## [1] 6</code></pre>
 </div>
 <div id="problem-3" class="section level3">
 <h3>Problem 3:</h3>
 <p><strong>Write a function that takes as input two integers representing the number of rows and columns in a matrix.</strong></p>
-<pre class="r"><code>#make_matrix &lt;- function(row=5,col=6) {
-  #mat &lt;- matrix(nrow = row, ncol = col)
+<pre class="r"><code>makemat &lt;- function(x,y) {
+  mat &lt;- matrix(nrow = x, ncol = y)
   
- # for(i in 1:row{
- # for(j in 1:col){
- #   mat[i,j] &lt;- i*j
- # }
-#  }
-#}</code></pre>
+  for(i in 1:nrow(mat)){
+    for(j in 1:ncol(mat)){
+     mat[i,j] &lt;- i*j
+    }
+  }
+  print(mat)
+}
+
+makemat(x=sample(1:10, 1),y=sample(1:10, 1))</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+## [1,]    1    2    3    4    5    6    7    8    9    10</code></pre>
 </div>
 <div id="problem-4-practice-calling-custom-functions-within-a-for-loop" class="section level3">
 <h3>Problem 4: Practice calling custom functions within a for loop</h3>
@@ -217,12 +222,12 @@ ResVar &lt;- c(Group1, Group2, Group3)
 Group.df &lt;- data.frame(Groups, ResVar) 
 head(Group.df)</code></pre>
 <pre><code>##   Groups   ResVar
-## 1 Group1 4.666466
-## 2 Group1 4.926137
-## 3 Group1 4.479749
-## 4 Group1 6.359330
-## 5 Group1 4.200342
-## 6 Group1 3.858699</code></pre>
+## 1 Group1 4.231407
+## 2 Group1 3.896559
+## 3 Group1 4.371805
+## 4 Group1 5.735296
+## 5 Group1 4.493779
+## 6 Group1 5.654837</code></pre>
 <p><strong>PART B: Write a custom function that 1) reshuffles the response variable, and 2) calculates the mean of each group in the reshuffled data. Store the means in a vector of length 3.</strong></p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
@@ -243,7 +248,8 @@ head(Group.df)</code></pre>
     summarise_at(vars(ShuffResVar), list(name=mean))
 
   averages&lt;-(Averages$name)
-  cat(averages)
+  
+  print(averages)
 }</code></pre>
 <p><strong>PART C:Use a for loop to repeat the function in b 100 times. Store the results in a data frame that has 1 column indicating the replicate number and 1 column for each new group mean, for a total of 4 columns.</strong></p>
 <p><strong>PART D: Use qplot() to create a histogram of the means for each reshuffled group. Or, if you want a challenge, use ggplot() to overlay all 3 histograms in the same figure. How do the distributions of reshuffled means compare to the original means?</strong></p>

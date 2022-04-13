@@ -1,5 +1,5 @@
 ---
-title: "Homework_09.2"
+title: "Homework_09"
 author: "Gillian Berglund"
 date: "3/23/2022"
 output: 
@@ -7,32 +7,54 @@ output:
     theme: cosmo
 ---
 # Organizing Code With Structured Programming
+## 1. 
+```{r}
 ## Description ----------------------------------
-#### description of script: creating fake data sets for hypothesis testing
+#### description of script: creating fake anova data set, running anova and graphing results.
 
 ####  23 Mar 2022
 #### GB
 
 ## Initialize -----------------------------------
-```{r}
 library(tidyverse)
 library(ggplot2)
-```
 
 ## Load Functions -------------------------------
-```{r}
 source("Functions/sim_anova_data.R")  
 source("Functions/run_anova.R")  
-source("Functions/graph_anova.R")  
-```
+source("Functions/graph_anova.R") 
+
 ## Global Variables -----------------------------
 
 ## Program Body ---------------------------------
-```{r}
 ano_data <- sim_anova_data()
 head(ano_data)
+run_anova(dataframe = ano_data)
+graph_anova(dataframe = ano_data)
+```
 
-run_anova()
-graph_results()
+## 2. Modifying Program:
+```{r}
+## Description ----------------------------------
+#### description of script: creating fake anova data set, running anova and graphing results.
 
+####  23 Mar 2022
+#### GB
+
+## Initialize -----------------------------------
+library(tidyverse)
+library(ggplot2)
+
+## Load Functions -------------------------------
+source("Functions/sim_anova_data.R")  
+source("Functions/run_anova.R")  
+source("Functions/graph_anova.R") 
+
+## Global Variables -----------------------------
+
+## Program Body ---------------------------------
+ano_data <- sim_anova_data()
+head(ano_data)
+run_anova(dataframe = ano_data)
+graph_anova(dataframe = ano_data)
 ```

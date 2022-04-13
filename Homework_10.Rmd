@@ -34,17 +34,18 @@ length(myvectorsub)
 
 ```{r}
 
-
-#make_matrix <- function(row=5,col=6) {
-  #mat <- matrix(nrow = row, ncol = col)
+makemat <- function(x,y) {
+  mat <- matrix(nrow = x, ncol = y)
   
- # for(i in 1:row{
- # for(j in 1:col){
- #   mat[i,j] <- i*j
- # }
-#  }
-#}
-    
+  for(i in 1:nrow(mat)){
+    for(j in 1:ncol(mat)){
+     mat[i,j] <- i*j
+    }
+  }
+  print(mat)
+}
+
+makemat(x=sample(1:10, 1),y=sample(1:10, 1))
 ```
 
 ### Problem 4: Practice calling custom functions within a for loop
@@ -78,14 +79,17 @@ shuffle_data <- function(){
 
   averages<-(Averages$name)
   
+  print(averages)
 }
-
 
 ```
 
 **PART C:Use a for loop to repeat the function in b 100 times. Store the results in a data frame that has 1 column indicating the replicate number and 1 column for each new group mean, for a total of 4 columns.**
 
 ```{r}
+for(i in 1:ncol(temps.df)){
+  print(degf.to.degc(x = temps.df[,i]))
+}
 
 
 

@@ -4,7 +4,7 @@
 # input: x and y numeric vectors of same length
 # output: create ggplot graph
 #-----------------------------------
-graph_results <- function(dataframe=ano_data) {
+graph_anova <- function(dataframe) {
   ano_plot <- ggplot(dataframe) +
     aes(x=trt_group,y=proportions) +
     geom_boxplot()

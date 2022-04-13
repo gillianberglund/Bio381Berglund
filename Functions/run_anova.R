@@ -4,7 +4,7 @@
 # input: dataframe with predictor and response variable 
 # output: summary from ANOVA analysis
 #-----------------------------------
-run_anova <- function(dataframe=ano_data) {
+run_anova <- function(dataframe) {
   ano_model <- aov(proportions~trt_group,data=dataframe)
   z <- summary(ano_model)
   flat_out <- unlist(z)
