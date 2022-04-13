@@ -1,0 +1,34 @@
+---
+title: "Homework_12"
+author: "Gillian Berglund"
+date: "4/13/2022"
+output: html_document
+---
+
+```{r}
+my_data <- read.table(file="ModScore.csv",
+                    header=TRUE,
+                    sep=",",
+                    comment.char="#")
+str(my_data)
+
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+
+qplot(x=my_data$Peptide, y=my_data$Modscore,geom="boxplot",fill=I("tomato")) 
+
+
+p <- ggplot(my_data, aes(x=Peptide, y=Modscore)) + 
+  geom_boxplot()
+print(p)
+
+p + geom_jitter(shape=16, position=position_jitter(0.2)) + theme_bw()
+
+p2 <- ggplot(my_data, aes(x=Peptide, y=Modscore)) +
+  geom_boxplot(fill='tomato', color="black")+
+  theme_classic()
+print(p2)
+
+# practice saving to jpeg, pdf 
+```
