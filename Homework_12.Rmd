@@ -34,6 +34,24 @@ print(p2)
 
 **Using built in R Faithful Dataset**
 ```{r}
+mydata <- faithful
+head(mydata)
 
+g1 <- ggplot(data=mydata, mapping=aes(x=waiting,y=eruptions)) + geom_point()
+ print(g1)
 
+g1 + theme_classic(base_size=20,base_family="serif")
+
+g2 <- ggplot(data=mydata) +
+       aes(x=waiting,y=eruptions) + 
+       geom_point(size=2,
+                  shape=21,
+                  color="black",
+                  fill="tomato") +
+       labs(title="Old Faithful Geyser Eruption Time vs Waiting Time ",
+            x="Waiting Time (minutes)",
+            y="Eruption Time (minutes)")
+ print(g2)
+ 
+ggsave(plot=g2, filename="Geyser",width=5,height=3,units="in",device="pdf")
 ```
