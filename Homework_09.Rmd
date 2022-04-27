@@ -36,7 +36,7 @@ graph_anova(dataframe = ano_data)
 ## 2. Modifying Program:
 ```{r}
 ## Description ----------------------------------
-#### description of script: creating fake anova data set, running anova and graphing results.
+#### description of script: creating fake anova data set, running anova and outputting graph with raw data overlaying boxpolot. 
 
 ####  23 Mar 2022
 #### GB
@@ -48,13 +48,14 @@ library(ggplot2)
 ## Load Functions -------------------------------
 source("Functions/sim_anova_data.R")  
 source("Functions/run_anova.R")  
-source("Functions/graph_anova.R") 
+source("Functions/graph_anova2.R") 
 
 ## Global Variables -----------------------------
 
 ## Program Body ---------------------------------
-ano_data <- sim_anova_data()
-head(ano_data)
-run_anova(dataframe = ano_data)
-graph_anova(dataframe = ano_data)
+data.frame <- sim_anova_data()
+head(data.frame)
+run_anova(dataframe = data.frame)
+graph_anova2(dataframe = data.frame)
+
 ```

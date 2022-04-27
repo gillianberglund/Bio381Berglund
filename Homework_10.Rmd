@@ -114,7 +114,8 @@ head(Randomization)
 
 ```
 
-**PART D: Use qplot() to create a histogram of the means for each reshuffled group. Or, if you want a challenge, use ggplot() to overlay all 3 histograms in the same figure. How do the distributions of reshuffled means compare to the original means?**
+**PART D: Use qplot() to create a histogram of the means for each reshuffled group.How do the distributions of reshuffled means compare to the original means?**
+
 ```{r}
 library(ggplot2)
 
@@ -132,5 +133,33 @@ print(g3)
 
 ```
 
+### Problem 5: Statistical Analysis 
+**Standard Statistical Analysis of Group Means:**
+```{r}
+ano_model <- aov(ResVar~Groups,data=Group.df)
+  z <- summary(ano_model)
+  flat_out <- unlist(z)
+  ano_stats <- list(f_ratio <- unlist(z)[7],
+                    f_pval <- unlist(z)[9])
 
+  print(ano_stats)
 
+```
+**p-values from randomization test** 
+
+```{r}
+library(tidyverse)
+
+Rand_Anova <- pivot_longer(Randomization,Group1:Group3,names_to = "Groups", values_to = "ResVar")
+head(Rand_Anova)
+  
+  
+Rand_ano_model <- aov(ResVar~Groups,data=Rand_Anova)
+  z2 <- summary(ano_model)
+  flat_out2 <- unlist(z)
+  Rand_ano_stats <- list(f_ratio <- unlist(z)[7],
+                    f_pval <- unlist(z)[9])
+
+  print(Rand_ano_stats)
+
+```

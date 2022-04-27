@@ -30,5 +30,10 @@ p2 <- ggplot(my_data, aes(x=Peptide, y=Modscore)) +
   theme_classic()
 print(p2)
 
-# practice saving to jpeg, pdf 
+```
+
+**Using built in R Faithful Dataset**
+```{r}
+
+
 ```
